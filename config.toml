@@ -1,13 +1,13 @@
 baseURL = "https://labs.hypersign.id//"
 languageCode = "en-us"
-title = "Hpersign Labs"
+title = "Hypersign Labs"
 theme = "hugo-theme-okayish-blog"
-copyright = "© Hpersign 2021"
+copyright = "© Hypersign 2021"
 
 [params]
 # These will be used for OpenGraph, Twitter Card and Schema.org
 description = "Brewing technology!"
-keywords = ["identity", "blockchain", "security", "Hpersign", "cryptography"]
+keywords = ["identity", "blockchain", "security", "Hypersign", "cryptography"]
 #images = ["/images/banner.png"]
 # Enable/disable share links (Facebook, Twitter and LinkedIn)
 shareLinksEnabled = true
@@ -40,7 +40,7 @@ url = "/authors"
 [[menu.main]]
 identifier = "repo"
 name = "Contribute?"
-url = "https://github.com/Hpersign-protocol/labs"
+url = "https://github.com/hypersign-protocol/labs"
 
 
 [[menu.main]]
