@@ -15,6 +15,23 @@ The `authz` module grants and revokes permissions to accounts for performation c
 
 The `feegrant` module is responsible for granting and revoking Fee allowances. Here, we specify the limit that an account has to spend on fees. Once this limit exhausts, User won't be able to perform the authorized transactions.
 
+**Code Implementation**
+
+The TypeURL for transaction messages of a custom module must be registered, for `authz` module to provide the corresponding authorization. Here's how we did it in [Hypersign Identity Network](https://github.com/hypersign-protocol/hid-node):
+
+```golang
+// File: x/ssi/module.go
+
+// ----
+
+func (am AppModule) RegisterServices(cfg module.Configurator) {
+	types.RegisterQueryServer(cfg.QueryServer(), am.keeper)
+	types.RegisterMsgServer(cfg.MsgServer(), keeper.NewMsgServerImpl(am.keeper)) // Registers Tx Messages
+}
+
+// ----
+```
+
 ### Pre-requisite for this article
 
 The reader must be familiar with the concepts of Decentralised Identity (DID) and Self-Sovereign Identity (SSI), and have basic working knowledge of Cosmos SDK to understand the technical section of blog.
@@ -23,7 +40,7 @@ The reader must be familiar with the concepts of Decentralised Identity (DID) an
 
 Say a User wants to create a DID on a Decentralized Registry. Since every transaction incur fees, they have to ensure their wallet is loaded with some Gas tokens. This becomes a friction for user, as they first have to trade fiat with crypto on a Centralized exchange, and then transfer them to a Non-Custodial Wallet like Metamask. This becomes a major hassle for dApps when it comes to onboarding their users.
 
-Let's look at how we can solve this problem with [Hypersign Identity Network](https://github.com/hypersign-protocol/hid-node), which is built with Cosmos SDK
+Let's look at how we can solve this problem with [Hypersign Identity Network](https://github.com/hypersign-protocol/hid-node), which is built using Cosmos SDK
 
 ### The Approach
 
@@ -35,7 +52,7 @@ We will now look at implementing the sequence with the help of Hypersign Identit
 
 IdP address: `hid1qemjjsrsjwyuucv0zr370kj8k9dakvp9907zzj`
 
-1. User's account is created
+1. User generates a wallet (Public and Private Key pair)
 
 ```
 $ hid-noded keys add user
@@ -93,7 +110,7 @@ pagination:
   total: "0"
 ```
 
-4. User generates DID Document from the SDK, signs it with their pivate keys and sends it to Idp. Since, we are focused only on CLI, we will be executing the similar SDK process with its help.
+4. User generates DID Document from the SDK, signs it with their pivate keys. Since, we are focused only on CLI, we will be executing the similar SDK process with its help.
 
 ```
 hid-noded tx ssi create-did '{
@@ -117,6 +134,7 @@ hid-noded tx ssi create-did '{
 ]
 }' did:hs:0f49341a-20ef-43d1-bc93-de30993e6c51#zEYJrMxWigf9boyeJMTRN4Ern8DJMoCXaLK77pzQmxVjf --ver-key oVtY1xceDZQjkfwlbCEC2vgeADcxpgd27vtYasBhcM/JLR6PnPoD9jvjSJrMsMJwS7faPy5OlFCdj/kgLVZMEg== --from hid1enragujgzhex39tt34ljtqmwgljn0kr685f3nk --generate-only > tx.json
 ```
+_Note: The `--from` flag here denote User's account_
 
 5. User submits the transaction with IdP acting as the fee Payer.
 
@@ -172,7 +190,7 @@ pagination:
 We can see that the fees `50uhid` has been deducted from IdP's account.The spend limit balance also went from `1000uhid` to `950uhid`:
 
 ```
-hid-noded q feegrant grants hid1enragujgzhex39tt34ljtqmwgljn0kr685f3nk  
+$ hid-noded q feegrant grants hid1enragujgzhex39tt34ljtqmwgljn0kr685f3nk  
 
 allowances:
 - allowance:
