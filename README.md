@@ -1,6 +1,6 @@
 # Hypersign Labs
 
-Hypersign labs is part of [Hypermine organization](https://www.hypermine.in/) whose purpose is to bring researchers, students and techies who love deep diving into latest technologies and innovations, on one platform and hence building a community of like minded people. The idea (but not strict) is to read research papers and convert them into simple readable blogs so that people can understand easily and quickly. At present, our prime focus are in the field of cryptography, blockchain, PKI, security, SSI, DID etc. 
+[Hypersign Labs](https://labs.hypersign.id/) is part of [Hypermine organization](https://www.hypermine.in/) whose purpose is to bring researchers, students and techies who love deep diving into latest technologies and innovations, on one platform and hence building a community of like minded people. The idea (but not strict) is to read research papers and convert them into simple readable blogs so that people can understand easily and quickly. At present, our prime focus are in the field of cryptography, blockchain, PKI, security, SSI, DID etc. 
 
 ## How can I contribute?
 
@@ -14,7 +14,7 @@ Hypersign labs is part of [Hypermine organization](https://www.hypermine.in/) wh
 **Clone repo**
 
 ```
-git clone https://github.com/hypermine-bc/labs
+git clone https://github.com/hypersign-protocol/labs.git
 ```
 
 **Adding a new post** 
@@ -31,10 +31,10 @@ hugo new posts/<CATEGORY>/<POSTNAME>.md
 **Starting hugo server**
 
 ```
-hugo server -D --verbose # run server
+hugo server -D --verbose
 ```
 
-## Giving Pull request
+## Raise the Pull request
 
 ```
 git checkout -b <POST-NAME> ## make sure to create branch name with post name
@@ -43,7 +43,7 @@ git commit -m <COMMIT MESSAGE>
 git push origin <POST-NAME>
 ```
 
-Once pushed, go to repository and give pull request. 
+Once pushed, head over to the repository and raise the pull request. 
 
 
 
