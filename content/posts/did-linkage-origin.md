@@ -3,16 +3,14 @@ title: "Technical explanation of Two-Way-Authentication; Linking DID with Websit
 date: 2022-06-22T14:27:56+05:30
 draft: false
 categories: ["did", "blockchain", "ssi"] 
-tags: ["did", "verfiable-credentila", "ssi", "blockchain"]
-banner: "/images/did-linkage-origin/did-origin-link.png"
+tags: ["did", "verifiableCredential", "vc", "web3", "login", "authentication" "ssi", "blockchain"]
+banner: "/images/did-linkage-origin/phising-attack.png"
 authors:
   [vishwas]
 ---
 
 
 Two features we proudly announce on our website are;  **Two-Way Authentication**  and  **Independent Verification**. We will talk about the latter in some other blog but for this blog, let us just stick to the feature -  **Two-Way Authentication**. The question is what is this feature and how it can be technically implemented and proven that it MAY help to stop *phishing attacks*.
-
-![img](/images/did-linkage-origin/phising-attack.png)
 
 ## Two-Way Authentication
 
@@ -29,6 +27,8 @@ Now for users to verify a website, they not only has to verify whether that webs
 I hope you have basic knowledge of DID and Verifiable Credentials, if not, I request you to read [this](https://labs.hypersign.id/posts/ssi-detail/) blog post before proceeding.
 
 --- 
+
+![img](/images/did-linkage-origin/did-origin-link.png)
 
 
 > **How to proof an entity controlling the [origin](https://identity.foundation/.well-known/resources/did-configuration/#Origin) and the [Controller](https://identity.foundation/.well-known/resources/did-configuration/#Controller) of the [DID](https://identity.foundation/.well-known/resources/did-configuration/#DID) to be the same entity?**
