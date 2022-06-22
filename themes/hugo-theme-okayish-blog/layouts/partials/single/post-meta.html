@@ -6,9 +6,7 @@
     <div class="col-8">
         {{ partial "single/post-info.html" . }}
     </div>
-    {{ end }}
-
-    {{ if $.Param "shareLinksEnabled" | default true }}
+    {{ end }} {{ if $.Param "shareLinksEnabled" | default true }}
     <div class="col-4 {{ if $hasPostInfo }} col--share-links {{end}}">
         {{ partial "single/share-links.html" . }}
     </div>
@@ -22,9 +20,7 @@
         {{ partial "single/i18n-list.html" . }}
     </div>
 </div>
-{{ end }}
-
-{{ if .Params.tags }}
+{{ end }} {{ if .Params.tags }}
 <div class="row">
     <div class="col-12">
         {{ partial "single/tags.html" . }}
