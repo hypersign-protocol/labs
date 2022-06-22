@@ -9,7 +9,6 @@ authors:
   [vishwas]
 ---
 
-
 Two features we proudly announce on our website are;  **Two-Way Authentication**  and  **Independent Verification**. We will talk about the latter in some other blog but for this blog, let us just stick to the feature -  **Two-Way Authentication**. The question is what is this feature and how it can be technically implemented and proven that it MAY help to stop *phishing attacks*.
 
 ## Two-Way Authentication
