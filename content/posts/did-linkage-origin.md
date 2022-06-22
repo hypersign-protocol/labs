@@ -4,7 +4,7 @@ date: 2022-06-22T14:27:56+05:30
 draft: false
 categories: ["did", "blockchain", "ssi"] 
 tags: ["did", "verfiable-credentila", "ssi", "blockchain"]
-banner: "/images/did-linkage-origin/did-origin-link.png.png"
+banner: "/images/did-linkage-origin/did-origin-link.png"
 authors:
   [vishwas]
 ---
