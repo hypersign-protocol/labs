@@ -27,9 +27,6 @@ I hope you have basic knowledge of DID and Verifiable Credentials, if not, I req
 
 --- 
 
-![img](/images/did-linkage-origin/did-origin-link.png)
-
-
 > **How to proof an entity controlling the [origin](https://identity.foundation/.well-known/resources/did-configuration/#Origin) and the [Controller](https://identity.foundation/.well-known/resources/did-configuration/#Controller) of the [DID](https://identity.foundation/.well-known/resources/did-configuration/#DID) to be the same entity?**
 
 Any service wants to prove that they OWN a certain domain and a DID. How can it prove that? 
@@ -40,6 +37,7 @@ So here are two things that need to be proven
 
 - The service which owns origin hypersign.id also owns a DID. 
 - Looking at DID, one should be able to identify association of an origin
+
 
 
 ## Concept of `/.well-known/` URI
@@ -130,6 +128,10 @@ Steps to verify the Domain Linkage Credential
 If [Domain Linkage Credential](https://identity.foundation/.well-known/resources/did-configuration/#DomainLinkageCredential) verification is successfull, a [Verifier](https://identity.foundation/.well-known/resources/did-configuration/#Verifier) **SHOULD** consider the entity controlling the [origin](https://identity.foundation/.well-known/resources/did-configuration/#Origin) and the [Controller](https://identity.foundation/.well-known/resources/did-configuration/#Controller) of the [DID](https://identity.foundation/.well-known/resources/did-configuration/#DID) to be the same entity.
 
 Pay attention to the first point very carefully. The well-known URI to which the verifier is accessing must have the same origin as mentioned in the   `credentialSubject.origin` property of the `DomainLinkageCredential`. 
+
+
+![img](/images/did-linkage-origin/did-origin-link.png)
+
 
 ## Linking an Origin with a DID
 
